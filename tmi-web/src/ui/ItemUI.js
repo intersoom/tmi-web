@@ -56,7 +56,6 @@ function ItemUI(props) {
     return (
         <div className="ItemUI">
             <div css={cardStyle}
-                 // 오류남!
                  onClick={()=> {
                      props.handleClick(props.elementIndex)
                  }}>

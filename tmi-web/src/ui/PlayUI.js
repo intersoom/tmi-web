@@ -30,18 +30,21 @@ function PlayUI(props) {
     const buttonStyle = css`
         width: 17%;
         height: 50px;
-        border: 1.5px solid black;
+        border: 1.6px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
       
         cursor: pointer;
+      
+      font-size: 1.1rem;
+      font-weight: 400;
     `
 
     const buttonOnclickStyle = css`
       width: 17%;
       height: 50px;
-      border: 1.5px solid black;
+      border: 1.6px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -49,6 +52,8 @@ function PlayUI(props) {
       cursor: pointer;
       
       background-color: #E5C17B;
+      font-size: 1.1rem;
+      font-weight: 500;
     `
 
     const slideShowWrapStyle = css`
@@ -124,31 +129,31 @@ function PlayUI(props) {
                      onClick={() => {
                          showBtnSlide(0);
                      }}>
-                    1번(임시)
+                    유물 조합
                 </div>
                 <div css={currentSlide === 1 ? buttonOnclickStyle : buttonStyle}
                      onClick={() => {
                          showBtnSlide(1);
                      }}>
-                    2번(임시)
+                    함정 타일
                 </div>
                 <div css={currentSlide === 2 ? buttonOnclickStyle : buttonStyle}
                      onClick={() => {
                          showBtnSlide(2);
                      }}>
-                    3번(임시)
+                    출현 몹
                 </div>
                 <div css={currentSlide === 3 ? buttonOnclickStyle : buttonStyle}
                      onClick={() => {
                          showBtnSlide(3);
                      }}>
-                    4번(임시)
+                    아이템
                 </div>
                 <div css={currentSlide  === 4 ? buttonOnclickStyle : buttonStyle}
                      onClick={() => {
                          showBtnSlide(4);
                      }}>
-                    5번(임시)
+                    애니메이션
                 </div>
             </div>
             <div css={slideShowWrapStyle}>

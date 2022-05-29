@@ -8,28 +8,43 @@ import MapUI from "../ui/MapUI";
 import ModalUI from "../ui/ModalUI";
 
 import {useState} from "react";
-import modalUI from "../ui/ModalUI";
+
+
 
 function Intro() {
-    const itemArr = [{name: "하토르의 우유", explanation: "체력을 회복하게 도와줍니다."},
-        {name: "세크메트의 혈주", explanation: "가까운 적에게 방사 피해를 줍니다."},
-        {name: "케프리의 스카라베", explanation: "화염구를 발생시켜줍니다."}
+    const itemArr = [
+            {name: "하토르의 우유",
+             explanation: "능력 사용 시 마력을 소모하여\n체력을 회복합니다.",
+             detail: "하토르는 치유과 사랑의 신으로 암소의 모습을 지녔으며 태양신 라의 딸로 알려져 있다. " +
+                 "하지만 세트를 지지한 아버지와는 다르게 자신은 세트와의 전쟁 중 눈을 뽑힌 호루스에게 신성한 우유를 뿌려 " +
+                 "그의 눈을 치료해주었다. 이후 하토르의 도움으로 세트에게 승리한 호루스는 왕좌를 차지하며 자신을 도와준 " +
+                 "하토르를 왕비로 삼는다."},
+            {name: "세크메트의 혈주",
+             explanation: "능력 사용 시 체력을 소모하여\n가까운 적에게 방사 피해를\n입힙니다.",
+             detail: "하토르와 동일한 신격으로 숭배된 세크메트는 인간의 죄에 분노하여 지상에 내려와 날개가 달린 사자의 모습으로 인간들을 학살했다고 전해진다. " +
+                 "태양신 라는 이를 막기 위해 석류 등을 이용해 만든 붉은 술을 지상에 뿌렸고, 세크메트는 이를 피로 착각하여 몽땅 마신 나머지, " +
+                 "취해 잠들었다."},
+            {name: "케프리의 스카라베",
+             explanation: "능력 사용 시 마력을 소모하여\n크기와 위력이 점점 커지는\n화염구 발생시킵니다.",
+             detail: "케프리는 태양신 라가 새벽일 때 취하는 신격으로 쇠똥구리의 모습을 하고 있다. " +
+                 "쇠똥구리가 둥근 걸 굴리고 있기 때문에 마치 태양을 움직이는 것 같다고 하여 고대 이집트 신화에서는 신성한 벌레 스카라베로 추앙받으며" +
+                 " 쇠똥구리의 모습을 한 다양한 유물이 존재한다. "}
     ];
 
-    const [isModalOpen, setIsModalOpen] = useState([false, false, false]);
+    const [modalState, setModalState] = useState(false);
+    const [modalName, setModalName] = useState('');
+    const [modalContent, setModalContent] = useState('');
 
-    const openModal = (idx) => {
-        const newArr = Array(itemArr.length).fill(false);
-        newArr[idx] = true;
-        setIsModalOpen(newArr);
-        console.log(idx, isModalOpen[0]);
-    };
+    const handleClick = (idx) => {
+        setModalState(true);
+        setModalContent(itemArr[idx].detail);
+        setModalName(itemArr[idx].name);
+    }
 
-    const closeModal = () => {
-        if (isModalOpen === true) return setIsModalOpen(false);
-    };
-
-
+    const closeModal = (e) => {
+        e.preventDefault();
+        setModalState(false);
+    }
 
     const pageWrap = css`
       min-width: 850px;
@@ -86,7 +101,7 @@ function Intro() {
     return (
         <div className="Intro" css={pageWrap}>
             <Header></Header>
-            {isModalOpen[0] && <ModalUI/>}
+            {modalState && <ModalUI name={modalName} content={modalContent} closeModal={closeModal}></ModalUI>}
             <div>
                 <h1 css={introTitleStyle}>『사자의 서』를 깨우친 자, 영원을 얻을 것이다.</h1>
                 <div css={videoStyle}>
@@ -118,11 +133,10 @@ function Intro() {
                                     elementIndex={index}
                                     name={elm.name}
                                     explanation={elm.explanation}
-                                    handleClick={openModal}
+                                    handleClick = {handleClick}
                             />
                         );
                     })}
-
                 </div>
                 <div css={titleWrapStyle}>
                     <h1 css={h1Style}>사자의 서만의 플레이</h1>

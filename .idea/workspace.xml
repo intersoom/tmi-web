@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1df3eae-e56e-486f-a508-30b8eb9c8d30" name="변경" comment="모달창 제작중" />
+    <list default="true" id="d1df3eae-e56e-486f-a508-30b8eb9c8d30" name="변경" comment="모달창 제작중">
+      <change afterPath="$PROJECT_DIR$/tmi-web/src/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmi-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmi-web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmi-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmi-web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmi-web/src/pages/Intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/tmi-web/src/pages/Intro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmi-web/src/ui/ItemUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/tmi-web/src/ui/ItemUI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmi-web/src/ui/ModalUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/tmi-web/src/ui/ModalUI.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +44,10 @@
       <updated>1652453064497</updated>
       <workItem from="1652453067341" duration="165000" />
       <workItem from="1652453235781" duration="394000" />
+      <workItem from="1652453740765" duration="7000" />
+      <workItem from="1652772866011" duration="11000" />
+      <workItem from="1652772976382" duration="683000" />
+      <workItem from="1652773911539" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="모달창 제작중">
       <created>1652453145524</created>
